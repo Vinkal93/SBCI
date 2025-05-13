@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Under Development | EduWeb</title>
+  <meta name="description" content="This page is currently under development">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --construction-orange: #ff9800;
+      --construction-yellow: #ffeb3b;
+      --construction-red: #f44336;
+      --construction-blue: #2196f3;
+    }
+
+    .dev-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #fff8e1 0%, #fff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dev-page::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(45deg, 
+          rgba(255, 152, 0, 0.1) 0px, 
+          rgba(255, 152, 0, 0.1) 10px,
+          transparent 10px, 
+          transparent 20px
+        );
+      animation: move-bg 20s linear infinite;
+    }
+
+    .dev-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .dev-icon {
+      font-size: 80px;
+      color: var(--construction-orange);
+      margin-bottom: 30px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .dev-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, var(--construction-orange), var(--construction-red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .dev-text {
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress {
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--construction-orange), var(--construction-red));
+      animation: progress 2s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+    }
+
+    .dev-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      background: linear-gradient(45deg, var(--construction-orange), var(--construction-red));
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    }
+
+    .dev-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+    }
+
+    .dev-btn ion-icon {
+      font-size: 20px;
+    }
+
+    .tools {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .tool-icon {
+      font-size: 32px;
+      animation: pulse 2s infinite;
+    }
+
+    .tool-icon:nth-child(1) { color: var(--construction-orange); animation-delay: 0s; }
+    .tool-icon:nth-child(2) { color: var(--construction-blue); animation-delay: 0.5s; }
+    .tool-icon:nth-child(3) { color: var(--construction-red); animation-delay: 1s; }
+    .tool-icon:nth-child(4) { color: var(--construction-yellow); animation-delay: 1.5s; }
+
+    .construction-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .construction-icon {
+      font-size: 24px;
+      animation: float 3s infinite;
+    }
+
+    .construction-icon:nth-child(1) { color: var(--construction-orange); animation-delay: 0s; }
+    .construction-icon:nth-child(2) { color: var(--construction-yellow); animation-delay: 0.5s; }
+    .construction-icon:nth-child(3) { color: var(--construction-red); animation-delay: 1s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes progress {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(400%); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes move-bg {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="dev-page">
+    <div class="dev-content">
+      <ion-icon name="construct-outline" class="dev-icon"></ion-icon>
+      
+      <h1 class="dev-title">Under Development</h1>
+      
+      <p class="dev-text">
+        We're working hard to bring you something amazing! This page is currently under construction.
+        Please check back soon for updates.
+      </p>
+
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+
+      <a href="index.html" class="dev-btn">
+        <ion-icon name="home-outline"></ion-icon>
+        Back to Home
+      </a>
+
+      <div class="tools">
+        <ion-icon name="logo-html5" class="tool-icon"></ion-icon>
+        <ion-icon name="logo-css3" class="tool-icon"></ion-icon>
+        <ion-icon name="logo-javascript" class="tool-icon"></ion-icon>
+        <ion-icon name="logo-react" class="tool-icon"></ion-icon>
+      </div>
+
+      <div class="construction-icons">
+        <ion-icon name="hammer-outline" class="construction-icon"></ion-icon>
+        <ion-icon name="build-outline" class="construction-icon"></ion-icon>
+        <ion-icon name="hardware-chip-outline" class="construction-icon"></ion-icon>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html> 
